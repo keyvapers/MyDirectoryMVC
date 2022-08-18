@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MyDirectoryMVC.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<MyDirectoryMVCContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MyDirectoryMVCContext") ?? throw new InvalidOperationException("Connection string 'MyDirectoryMVCContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

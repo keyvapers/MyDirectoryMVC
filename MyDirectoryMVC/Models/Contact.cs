@@ -5,7 +5,7 @@ namespace MyDirectoryMVC.Models
 {
     public class Contact
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
 
         [Required(ErrorMessage = "Nombre(s) es obligatorio")]
         [Display(Name = "Nombre(s)")]
@@ -21,7 +21,6 @@ namespace MyDirectoryMVC.Models
 
         [Required(ErrorMessage = "Correo es obligatorio")]
         [Display(Name = "Correo")]
-        [DataType(DataType.EmailAddress)]
         [EmailAddress(ErrorMessage = "Correo no válido")]
         public string Email { get; set; } = string.Empty;
     }
