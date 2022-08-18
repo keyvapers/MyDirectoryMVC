@@ -1,0 +1,48 @@
+﻿@model MyDirectoryMVC.Models.Contact
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<div>
+    <a asp-action="Index" class="btn btn-outline-primary mb-2"><i class="bi bi-arrow-left me-1"></i> Atrás</a>
+    <h4>Eliminar</h4>
+    <h5>¿Deseas eliminar este contacto?</h5>
+</div>
+<hr />
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Telephone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Telephone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+    </dl>
+    <div class="row">
+        <div class="col-6">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="ID" />
+                <input type="submit" value="Eliminar" class="btn btn-danger float-end" />
+            </form>
+        </div>
+    </div>
+</div>
